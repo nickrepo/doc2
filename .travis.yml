@@ -1,9 +1,7 @@
 sudo: required
 services:
-  - docker
-
+    -docker
 before_install:
-  - docker build -t nickrepo/doc2 -f Dockerfile.dev .
-
+    - docker build -t sambhaba/dockerdevandprod -f Dockerfile.dev .
 script:
-  - docker run -e CI=true nickrepo/doc2 npm run test -- --coverage
+    - docker run -e CI=true sambhaba/dockerdevandprod npm run test -- --coverage
