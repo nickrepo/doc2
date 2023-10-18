@@ -2,6 +2,6 @@ sudo: required
 services:
     -docker
 before_install:
-    - docker build -t sambhaba/dockerdevandprod -f Dockerfile.dev .
+    - docker build -t ntodorov1414/dcr -f Dockerfile.dev .
 script:
-    - docker run -e CI=true sambhaba/dockerdevandprod npm run test -- --coverage
+    - docker run -e CI=true ntodorov1414/dcr npm run test -- --coverage
