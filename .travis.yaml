@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+
+before_install:
+  - docker build -t ntodorov1414/dcr -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true ntodorov1414/dcr npm run test
