@@ -4,3 +4,6 @@ services:
 
 before_install:
   - docker build -t nickrepo/doc2 -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true nickrepo/doc2 npm run test
